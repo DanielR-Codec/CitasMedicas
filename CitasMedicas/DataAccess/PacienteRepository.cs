@@ -43,5 +43,17 @@ namespace CitasMedicas
             }
             return lista;
         }
+
+        public string ObtenerCorreoPaciente(int idPaciente)
+        {
+            using (var conexion = GetConnection())
+            {
+                conexion.Open();
+                var comando = new System.Data.SqlClient.SqlCommand("SELECT Correo FROM Pacientes WHERE IdPaciente = @Id", conexion);
+                comando.Parameters.AddWithValue("@Id", idPaciente);
+                var resultado = comando.ExecuteScalar();
+                return resultado != null ? resultado.ToString() : "";
+            }
+        }
     }
 }

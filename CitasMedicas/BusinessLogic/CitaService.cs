@@ -10,11 +10,13 @@ namespace CitasMedicas
     public class CitaService
     {
         private readonly CitaRepository _repository;
+        private readonly PacienteRepository _pacienteRepository;
         private readonly INotificador _notificador;
 
         public CitaService(INotificador notificador)
         {
             _repository = new CitaRepository();
+            _pacienteRepository = new PacienteRepository();
             _notificador = notificador;
         }
 
@@ -25,7 +27,12 @@ namespace CitasMedicas
 
             _repository.AgregarCita(cita);
 
-            _notificador.EnviarRecordatorio("paciente@correo.com", "Su cita ha sido confirmada.");
+            string correoReal = _pacienteRepository.ObtenerCorreoPaciente(cita.IdPaciente);
+
+            if (!string.IsNullOrWhiteSpace(correoReal))
+            {
+                _notificador.EnviarRecordatorio(correoReal, "Su cita ha sido confirmada.");
+            }
         }
 
         public void CancelarCita(int idCita)
