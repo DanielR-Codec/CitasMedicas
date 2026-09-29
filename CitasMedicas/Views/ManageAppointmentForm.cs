@@ -28,21 +28,6 @@ namespace CitasMedicas
             btnCancelarCita.Click += BtnCancelarCita_Click;
         }
 
-        private void BtnReprogramar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                _citaService.ReprogramarCita(_cita.IdCita, dtpNuevaFecha.Value);
-                MessageBox.Show("Cita reprogramada.");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void BtnCancelarCita_Click(object sender, EventArgs e)
         {
             var confirmacion = MessageBox.Show("¿Seguro que desea cancelar esta cita?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -53,6 +38,14 @@ namespace CitasMedicas
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void BtnReprogramar_Click(object sender, EventArgs e)
+        {
+            _citaService.ReprogramarCita(_cita.IdCita, dtpNuevaFecha.Value);
+            MessageBox.Show("Cita reprogramada.");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

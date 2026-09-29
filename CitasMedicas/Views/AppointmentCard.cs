@@ -22,9 +22,7 @@ namespace CitasMedicas
             lblPaciente.Text = cita.NombrePaciente;
             lblMotivo.Text = cita.Motivo;
             this.Dock = DockStyle.Fill;
-            this.Cursor = Cursors.Hand; // Cambia el cursor para indicar que es clickeable
-
-            // Asignar el mismo evento click al fondo y a los textos
+            this.Cursor = Cursors.Hand;
             this.Click += Tarjeta_Click;
             lblPaciente.Click += Tarjeta_Click;
             lblMotivo.Click += Tarjeta_Click;
@@ -35,8 +33,14 @@ namespace CitasMedicas
             ManageAppointmentForm frm = new ManageAppointmentForm(_cita);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                // Refresca el Grid llamando al método público del MainForm
-                ((MainForm)this.FindForm()).CargarAgenda();
+                foreach (Form openForm in Application.OpenForms)
+                {
+                    if (openForm is MainForm mainForm)
+                    {
+                        mainForm.CargarAgenda();
+                        break;
+                    }
+                }
             }
         }
     }

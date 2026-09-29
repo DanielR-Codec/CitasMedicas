@@ -57,7 +57,6 @@
     <Compile Include="BusinessLogic\EspecialidadService.cs" />
     <Compile Include="BusinessLogic\MedicoService.cs" />
     <Compile Include="BusinessLogic\PacienteService.cs" />
-    <Compile Include="BusinessLogic\Validador.cs" />
     <Compile Include="DataAccess\CitaRepository.cs" />
     <Compile Include="DataAccess\ConexionDB.cs" />
     <Compile Include="DataAccess\EspecialidadRepository.cs" />
