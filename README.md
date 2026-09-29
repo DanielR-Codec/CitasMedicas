@@ -12,5 +12,5 @@ Este proyecto ayuda a gestionar las citas medicas de una mejor manera y no a lap
 *    **Flexibilidad total:** ¿Un paciente no puede asistir? Haz clic en la tarjeta de su cita para reprogramarla a una nueva fecha o cancelarla.
 *    **Recordatorios integrados:** El sistema está preparado de forma modular para enviar recordatorios por correo a los pacientes una vez que su cita es confirmada (solo simulado por el momento).
 
-##  Tecnologías y Arquitectura
+##  En Desarrollo !!!
 
