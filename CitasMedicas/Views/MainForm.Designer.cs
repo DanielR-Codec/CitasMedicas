@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNuevaCita = new System.Windows.Forms.Button();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarMedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEspecialidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,14 +65,6 @@
             this.btnNuevaCita.Text = "Nueva Cita";
             this.btnNuevaCita.UseVisualStyleBackColor = false;
             this.btnNuevaCita.Click += new System.EventHandler(this.BtnNuevaCita_Click);
-            // 
-            // pnlContenedor
-            // 
-            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedor.Location = new System.Drawing.Point(0, 63);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(1236, 594);
-            this.pnlContenedor.TabIndex = 2;
             // 
             // menuStrip1
             // 
@@ -116,6 +109,14 @@
             this.registrarEspecialidadToolStripMenuItem.Text = "Registrar Especialidad";
             this.registrarEspecialidadToolStripMenuItem.Click += new System.EventHandler(this.btnRegistrarEspecialidad_Click);
             // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContenedor.Location = new System.Drawing.Point(0, 63);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(1236, 594);
+            this.pnlContenedor.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +125,7 @@
             this.ClientSize = new System.Drawing.Size(1236, 657);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

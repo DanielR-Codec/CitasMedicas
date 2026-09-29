@@ -25,6 +25,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageAppointmentForm));
             this.label1 = new System.Windows.Forms.Label();
             this.dtpNuevaFecha = new System.Windows.Forms.DateTimePicker();
             this.btnReprogramar = new System.Windows.Forms.Button();
@@ -86,6 +87,7 @@
             this.Controls.Add(this.btnReprogramar);
             this.Controls.Add(this.dtpNuevaFecha);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageAppointmentForm";
             this.Text = "ManageAppointmentForm";
             this.ResumeLayout(false);
